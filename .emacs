@@ -28,6 +28,7 @@
 (setq whitespace-style '(face lines-tail))
 
 (add-hook 'prog-mode-hook 'whitespace-mode)
+(add-hook 'text-mode-hook 'whitespace-mode)
 
 ;; pgrep for find . -name xx | xargs grep xx
 ;; =========================================
@@ -235,3 +236,13 @@
 ;; (require 'sublimity-map)
 ;; (require 'sublimity-attractive)
 ;; (sublimity-mode 1)
+
+;; Python Section
+;; ==============================
+(add-hook 'python-mode-hook '(lambda ()
+			       (setq python-indent 2)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; multiple cursors                                                       ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(global-set-key (kbd "C-c m c") 'mc/edit-lines)
